@@ -1,0 +1,19 @@
+{
+  "name": "neapolitan-extract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@vanilla-extract/integration": "^6.2.1",
+    "react-native-css-interop": "^0.0.0-alpha.3"
+  },
+  "peerDependencies": {
+    "metro": "*"
+  }
+}
