@@ -64,7 +64,7 @@ export async function transformWebCSS(
     config,
     rootDir,
     filename,
-    Buffer.from(`${linesOfCode.join()}\n${unwrappedCSSCode}`),
+    Buffer.from(`${linesOfCode.join("\n")};${unwrappedCSSCode}`),
     options
   );
 
