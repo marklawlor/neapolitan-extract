@@ -1,13 +1,23 @@
 {
   "name": "neapolitan-extract",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "prepublishOnly": "tsc"
   },
   "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marklawlor/neapolitan-extract.git"
+  },
+  "author": {
+    "name": "Mark Lawlor",
+    "url": "https://github.com/marklawlor"
+  },
+  "bugs": {
+    "url": "https://github.com/marklawlor/neapolitan-extract/issues"
+  },
   "license": "MIT",
   "dependencies": {
     "@vanilla-extract/integration": "^6.2.1",
