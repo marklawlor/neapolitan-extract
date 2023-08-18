@@ -1,6 +1,6 @@
 # Neapolitan Extract
 
-It's [vanilla-extract](https://vanilla-extract.style/) but with more flavors! Neapolitan Extract extends Vanilla Extract to also compile styling for React Native platforms. Use CSS on web, and StyleSheet on native!
+It's [vanilla-extract](https://vanilla-extract.style/) but with more flavors! Neapolitan Extract extends Vanilla Extract to also compile styling for React Native platforms. Use CSS on web, and StyleSheet on native! This library uses `react-native-css-interop` for the native styling runtime.
 
 This library is a work in progress.
 
@@ -8,17 +8,48 @@ This library is a work in progress.
 
 Just like Vanilla Extract, Neapolitan Extract assumes your bundler can support CSS bundling. As React Native CLI does not support CSS bundling, **only Expo SDK 49+** is supported.
 
+## Installation
+
+```bash
+// Install using your favorite package manager
+npm i neapolitan-extract
+yarn add neapolitan-extract
+pnpm i neapolitan-extract
+```
+
 ```tsx
+// metro.config.js
 const { getDefaultConfig } = require("expo/metro-config");
 const { withNeapolitanExtract } = require("neapolitan-extract");
 
 /** @type {import('expo/metro-config').MetroConfig} */
 const config = getDefaultConfig(__dirname, {
-  isCSSEnabled: true, // Make sure you enable CSS!
+  isCSSEnabled: true,
 });
 
 module.exports = withNeapolitanExtract(config);
 ```
+
+```tsx
+// babel.config.js
+module.exports = function (api) {
+  api.cache(true);
+  return {
+    plugins: [
+      // Make sure this plugin is last!!!
+      [
+        "@babel/plugin-transform-react-jsx",
+        {
+          runtime: "automatic",
+          importSource: "react-native-css-interop",
+        },
+      ],
+    ],
+  };
+};
+```
+
+That's it. Start coding!
 
 ## Usage
 
